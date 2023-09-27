@@ -1,9 +1,10 @@
-
-import { Groups } from '@screens/Groups';
-
-export default function App() {
+import { Groups } from '@screens/Groups'
+import theme from '@theme/index'
+import { ThemeProvider } from 'styled-components'
+export default function App () {
   return (
-   <Groups />
-  );
+    <ThemeProvider theme={theme}>
+      <Groups />
+    </ThemeProvider>
+  )
 }
-
