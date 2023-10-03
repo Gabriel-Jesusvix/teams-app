@@ -13,15 +13,15 @@ export function AppRoutes () {
       }}
     >
       <Screen
-        name='Groups'
+        name='groups'
         component={Groups}
       />
       <Screen
-        name='NewGroup'
+        name='new'
         component={NewGroup}
       />
       <Screen
-        name='Players'
+        name='players'
         component={Players}
       />
 
