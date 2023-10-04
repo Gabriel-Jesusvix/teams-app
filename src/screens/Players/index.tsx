@@ -19,6 +19,7 @@ import { type PLayerStorageDTO } from '@storage/player/PLayerStorageDTO'
 import { Container, Form, HeaderList, NumbersOfPlayers } from './styles'
 import { playerRemoveByGroup } from '@storage/player/playerRemoveByGroup'
 import { removeGroupByName } from '@storage/group/removeGroupByName'
+import { Loading } from '@components/Loading'
 
 interface RouteParams {
   group: string
@@ -28,6 +29,7 @@ export function Players () {
   const [team, setTeam] = useState('Time A')
   const [newPlayerName, setNewPlayerName] = useState('')
   const [players, setPlayers] = useState<PLayerStorageDTO[]>([])
+  const [isLoading, setIsLoading] = useState(true)
   const route = useRoute()
   const inputRef = useRef<TextInput>(null)
   const { navigate } = useNavigation()
@@ -60,12 +62,14 @@ export function Players () {
 
   async function fetchPlayerBytTeam () {
     try {
+      setIsLoading(true)
       const playersByTeam = await playersGetByGroupAndTeam(group, team)
-
       setPlayers(playersByTeam)
     } catch (error) {
       console.log(error)
       Alert.alert('Players', 'Não foi possivel carregar as pessoas do time selecionado.')
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -147,7 +151,11 @@ export function Players () {
         <NumbersOfPlayers>{players.length}</NumbersOfPlayers>
       </HeaderList>
 
-      <FlatList
+      {
+        isLoading
+          ? <Loading />
+          : (
+          <FlatList
         data={players}
         keyExtractor={item => item.name}
         renderItem={({ item }) => (
@@ -165,6 +173,8 @@ export function Players () {
           players.length === 0 && { flex: 1 }
         ]}
       />
+            )
+      }
 
       {
         players.length > 0 && (
