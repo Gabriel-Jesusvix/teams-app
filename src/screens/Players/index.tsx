@@ -17,6 +17,7 @@ import { playersGetByGroupAndTeam } from '@storage/player/playersGetByGroupAndTe
 import { type PLayerStorageDTO } from '@storage/player/PLayerStorageDTO'
 
 import { Container, Form, HeaderList, NumbersOfPlayers } from './styles'
+import { playerRemoveByGroup } from '@storage/player/playerRemoveByGroup'
 
 interface RouteParams {
   group: string
@@ -66,6 +67,15 @@ export function Players () {
     }
   }
 
+  async function handleRemovePlayer (playerName: string) {
+    try {
+      await playerRemoveByGroup(playerName, group)
+      fetchPlayerBytTeam()
+    } catch (error) {
+      console.log(error)
+      Alert.alert('Remover', 'Não foi possivel remover o player, tente novamente mais tarde,')
+    }
+  }
   useEffect(() => {
     fetchPlayerBytTeam()
   }, [team])
@@ -116,7 +126,7 @@ export function Players () {
         renderItem={({ item }) => (
           <PlayerCard
             name={item.name}
-            onRemove={() => { alert('Remover') }}
+            onRemove={async () => { await handleRemovePlayer(item.name) }}
           />
         )}
         ListEmptyComponent={() => (
