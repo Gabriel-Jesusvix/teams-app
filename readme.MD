@@ -42,5 +42,6 @@ Install appTeams with npm or yarn;
     
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![teams](https://github.com/Gabriel-Jesusvix/teams-app/assets/62946928/9abc9117-ccd3-4b30-8609-fdeb23f3830a)
+
 
