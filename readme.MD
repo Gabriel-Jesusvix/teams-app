@@ -41,7 +41,11 @@ Install appTeams with npm or yarn;
 ```
     
 ## Screenshots
-
-![teams](https://github.com/Gabriel-Jesusvix/teams-app/assets/62946928/9abc9117-ccd3-4b30-8609-fdeb23f3830a)
+![IMG_4743](https://github.com/Gabriel-Jesusvix/teams-app/assets/62946928/d0de279d-32fe-4a79-bd38-5ebfe3782ae9)
+![IMG_4742](https://github.com/Gabriel-Jesusvix/teams-app/assets/62946928/09837c29-8bef-420c-8181-78c00f00b77e)
+![IMG_4741](https://github.com/Gabriel-Jesusvix/teams-app/assets/62946928/94da85bc-739f-45d0-9220-3498ce18d3e2)
+![IMG_4740](https://github.com/Gabriel-Jesusvix/teams-app/assets/62946928/e152fc25-763a-481d-b265-8448552d2a09)
+![IMG_4739](https://github.com/Gabriel-Jesusvix/teams-app/assets/62946928/772444ef-0772-49a2-a49e-945d149d58bb)
+![IMG_4738](https://github.com/Gabriel-Jesusvix/teams-app/assets/62946928/fd4f5929-72d0-49f5-9590-3841225d2716)
 
 
