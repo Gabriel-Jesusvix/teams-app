@@ -84,6 +84,8 @@ export function Players () {
           autoCorrect={false}
           value={newPlayerName}
           onChangeText={(newPLayerName) => { setNewPlayerName(newPLayerName) }}
+          onSubmitEditing={handleAddPlayer}
+          returnKeyType='done'
         />
         <ButtonIcon
           icon='add'
